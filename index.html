@@ -11,14 +11,17 @@
 	</head>
 	<body>
 		<noscript>bloclock only works with Javascript enabled.</noscript>
-		<canvas id="gradientCanvas"></canvas>
-		<img id="welcomeLogo" src="bloclock.svg" alt="Bloclock"/>
-		<section id="infoWindow" class="sidenav">
 
-				<div id="appTitle"><img alt="bloclock logo" src="bloclock.svg"/></div>
-				<div class="inner">
+		<canvas id="gradientCanvas"></canvas>
+
+		<section id="infoWindow" class="sidenav">
+				<header id="appTitle">
+          <img alt="bloclock logo" src="bloclock.svg"/>
+        </header>
+
 				<p>Bloclock gives you a visual overview of the time in your day that is left, and has passed. The clock consists of a 10x10 grid in which each block resembles 10 minutes, adding up to a total of roughly 17 hours.</p>
-				<label>show full day (24H)</label>
+
+        <label>show full day (24H)</label>
 				<label class="switch">
 					<input id="mode24" type="checkbox">
 					<div class="slider"></div>
@@ -33,6 +36,7 @@
 					<input id="showBorders" type="checkbox">
 					<div class="slider"></div>
 				</label>
+
 				<label>show current time in active block</label>
 				<label class="switch">
 					<input id="showInside" type="checkbox">
@@ -40,27 +44,28 @@
 				</label>
 				<label>sharing is caring</label>
 
+        <!-- Social Buttons -->
 				<a class="button" href="whatsapp://send?text=Have%20a%20look%20at%20this%20mesmerizing%20clock%3A%20http%3A//bloclock.com" data-action="share/whatsapp/share">WhatsApp</a> <a class="button" href="https://www.facebook.com/sharer/sharer.php?u=bloclock.com" target="_blank">Facebook</a> <a class="button" href="https://twitter.com/home?status=Have%20a%20look%20at%20this%20mesmerizing%20clock%3A%20http%3A//bloclock.com" target="_blank">Twitter</a> <a class="button" href="mailto:?subject=Bloclock&body=Have%20a%20look%20at%20this%20mesmerizing%20clock%3A%20http%3A//bloclock.com" target="_blank">Mail</a> <a class="button" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A//bloclock.com&title=Bloclock&summary=Get%20more%20productive%20with%20the%20Bloclock.&source=" target="_blank">LinkedIn</a> <a class="button" href="https://plus.google.com/share?url=http%3A//bloclock.com" target="_blank">Google+</a>
-
 
 				<label>love Bloclock?</label>
 				<a class="button" href="https://paypal.me/daantastic" target="_blank">Donate</a>
-
+        <!-- End of social buttons -->
+        
 				<footer>
 					<p>Made by <a href="http://instagram.com/daantastic" target="_blank">Dani&euml;l</a>. Inspired by <a href="http://waitbutwhy.com/2016/10/100-blocks-day.html" target="_blank">WaitButWhy.com</a>.<br/><a id="mailLink" href="#">Contact me</a></p>
 				</footer>
-				</div>
+
 		</section>
 
 		<div id="hoverDetection"></div>
-		
+
 		<section id="container">
 			<img id="infoButton" src="info.svg" alt="open settings menu">
 			<section id="blocksContainer"></section>
 		</section>
 
-		<script type="text/javascript" src="js/moment.min.js"></script>
-		<script type="text/javascript" src="js/granim.min.js"></script>
+		<script type="text/javascript" src="js/moment.js"></script>
+		<script type="text/javascript" src="js/granim.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
 
     <!-- Google analytics -->
