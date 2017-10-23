@@ -73,16 +73,15 @@ var bloclock = {
         blockIsOver = moment().isAfter(moment(blockTime).add(10, "minutes"));
         blockIsOn = moment().isSameOrBefore(moment(blockTime).add(10, "minutes")) && moment().isAfter(moment(blockTime));
 
-        if(blockIsOver)
+        if(blockIsOver){
           blocksOver++;
+        }
 
         if(blockIsOn && !block.classList.contains('blinking')){
-          console.log(blockNumber+' is now on');
           block.classList.add('blinking');
 
         }else if(blockIsOver && !block.classList.contains('over')){
           block.classList.add('over');
-          console.log(blockNumber + ' is now over');
 
           if(block.classList.contains('blinking')){
             block.classList.remove('blinking');
@@ -90,11 +89,11 @@ var bloclock = {
 
         }else if(!blockIsOver && block.classList.contains('over')){
           block.classList.remove('over');
-          console.log(blockNumber + ' is now not over anymore');
         }
 
-     }
+     } // end of for loop
 
+     // Update <title> with the number of blocks left;
      document.title = "Bloclock (" +blocksOver + "/" + bloclock.settings.amountOfBlocks + ")";
   }
 };
