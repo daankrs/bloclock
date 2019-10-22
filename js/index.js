@@ -1,13 +1,10 @@
+/**
+ * This file is a refractored script and different from the live version
+ * It still misses some functionality
+ * E.g. settings in the sidebar don't work
+ */
 // index.js
-/*
-TO-DO:
-  - Initialize
-  - Update function
-  -
-*/
-var block,mode;
-
-var bloclock = {
+let bloclock = {
   settings:{
       amountOfBlocks: 100,
       bedTime:{
@@ -48,7 +45,7 @@ var bloclock = {
     wakeTime = moment(bedTime).subtract(1000, "minutes");
 
     for (var blockNumber = 1; blockNumber < (this.settings.amountOfBlocks + 1); blockNumber++) {
-        block = document.createElement("div");
+        let block = document.createElement("div");
         blockTime = moment(wakeTime).add((10*blockNumber-10), "minutes");
 
         block.id = 'block-' + blockNumber;
@@ -91,7 +88,7 @@ var bloclock = {
           block.classList.remove('over');
         }
 
-     } // end of for loop
+     }
 
      // Update <title> with the number of blocks left;
      document.title = "Bloclock (" +blocksOver + "/" + bloclock.settings.amountOfBlocks + ")";
@@ -99,7 +96,7 @@ var bloclock = {
 };
 
 // Sidebar, open and closing functions
-var sidebar = {
+let sidebar = {
   el:{
     infoButton: document.getElementById("infoButton"),
     infoWindow: document.getElementById("infoWindow"),
@@ -108,6 +105,7 @@ var sidebar = {
   Initialize:function(){
     this.el.hoverArea.addEventListener("mouseover", this.open);
     this.el.infoWindow.addEventListener("mouseout", this.close, !0);
+    this.el.infoButton.addEventListener("onclick", this.open);
   },
   open:function(){
     // Since open and close function are called from outside the object, use sidebar. instead of this.
