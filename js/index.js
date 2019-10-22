@@ -44,7 +44,7 @@ let bloclock = {
     bedTime = moment().hour(this.settings.bedTime.hour).minute(this.settings.bedTime.minutes).seconds("00");
     wakeTime = moment(bedTime).subtract(1000, "minutes");
 
-    for (var blockNumber = 1; blockNumber < (this.settings.amountOfBlocks + 1); blockNumber++) {
+    for (let blockNumber = 1; blockNumber < (this.settings.amountOfBlocks + 1); blockNumber++) {
         let block = document.createElement("div");
         blockTime = moment(wakeTime).add((10*blockNumber-10), "minutes");
 
@@ -63,7 +63,7 @@ let bloclock = {
     wakeTime = moment(bedTime).subtract(1000, "minutes");
 
      //Loop through all the blocks to see which ones are over and which are not.
-     for (var blockNumber = 1; blockNumber < (bloclock.settings.amountOfBlocks + 1); blockNumber++) {
+     for (let blockNumber = 1; blockNumber < (bloclock.settings.amountOfBlocks + 1); blockNumber++) {
         block = document.getElementById("block-"+blockNumber);
         blockTime = moment(wakeTime).add((10*blockNumber-10), "minutes");
 
@@ -113,7 +113,7 @@ let sidebar = {
     sidebar.el.infoButton.style.opacity = "0.0";
   },
   close:function(a){
-    for (var b = a.toElement || a.relatedTarget; b && b.parentNode && b.parentNode != window;) {
+    for (let b = a.toElement || a.relatedTarget; b && b.parentNode && b.parentNode != window;) {
         if (b.parentNode == this || b == this)
             return b.preventDefault && b.preventDefault(), !1;
         b = b.parentNode;
